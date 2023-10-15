@@ -45,21 +45,21 @@ export class UserController {
 
   @Put('/:id')
   async UpdateUser(@Param('id') id: string, @Body() newData: UpdateUserDTO) {
-    const updatedUser = await this.userRepository.update(id, newData)
+    const updatedUser = await this.userRepository.update(id, newData);
 
     return {
       user: updatedUser,
-      message: 'Usuário atualizado com sucesso'
-    }
+      message: 'Usuário atualizado com sucesso',
+    };
   }
 
   @Delete('/:id')
   async deleteUser(@Param('id') id: string) {
     const removedUser = await this.userRepository.delete(id);
-    
+
     return {
       user: removedUser,
-      message: 'Usuário removido com sucesso'
-    }
+      message: 'Usuário removido com sucesso',
+    };
   }
 }

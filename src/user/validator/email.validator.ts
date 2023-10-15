@@ -17,7 +17,7 @@ export class EmailValidator implements ValidatorConstraintInterface {
     value: any,
     validationArguments?: ValidationArguments,
   ): Promise<boolean> {
-    const possibleNewUser = await this.userRepository.fetchUserEmail(value);
+    const possibleNewUser = await this.userRepository.fetchUserByEmail(value);
     return !possibleNewUser;
   }
 }

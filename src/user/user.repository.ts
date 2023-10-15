@@ -25,7 +25,7 @@ export class UserRepository {
     return possibleUser
   }
 
-  async fetchUserEmail(email: string) {
+  async fetchUserByEmail(email: string) {
     const possibleNewUser = this.users.find(
       user => user.email === email
     )
